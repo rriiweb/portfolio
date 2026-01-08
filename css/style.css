@@ -238,14 +238,23 @@ section.hero {
   width: 800px;
 }
 
-.about .inner .about-left .profile p:first-child {
+.about .inner .about-left .profile p:nth-of-type(1) {
   font-size: 4.4rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.about .inner .about-left .profile p:last-child {
+.about .inner .about-left .profile p:nth-of-type(2) {
   font-size: 2.8rem;
+}
+
+.about .inner .about-left .profile a {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  font-size: 2.4rem;
+  border-radius: 50rem;
+  border: 2px solid #000;
 }
 
 .about .inner .about-left .introduction {
@@ -341,7 +350,8 @@ section.hero {
 
 .work-inner .work-left ul li {
   /* 작업물 늘어나면 1.6rem 1rem */
-  padding: 2rem 1rem;
+  /* padding: 2rem 1rem; */
+  padding: 1.8rem 1rem;
   border-bottom: 1px solid #000;
   font-size: 2.8rem;
   cursor: pointer;

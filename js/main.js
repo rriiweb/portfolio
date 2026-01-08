@@ -5,8 +5,12 @@ $(function () {
     }
   })
 
-  let aboutSectionTop, publishingSectionTop, frontendSectionTop, designSectionTop;
-  let headerLisTop = [];
+  let aboutSectionTop = $("section.about").offset().top;
+  let publishingSectionTop = $("section.publishing").offset().top;
+  let frontendSectionTop = $("section.frontend").offset().top;
+  let designSectionTop = $("section.design").offset().top;
+
+  let headerLisTop = [aboutSectionTop, publishingSectionTop, frontendSectionTop, designSectionTop];
   let publishingCardsTop = [];
   let frontendCardsTop = [];
   let designCardsTop = [];
