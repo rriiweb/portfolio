@@ -137,28 +137,27 @@ $(function () {
     })
   })
 
-  const cardnews1ImagesSrc = [
-    "design-2cardnews-1.jpg",
-    "popup-cardnews1-1.jpg",
-    "popup-cardnews1-2.jpg",
-    "popup-cardnews1-3.jpg",
-    "popup-cardnews1-4.jpg",
-  ];
-
-  const cardnews2ImagesSrc = [
-    "design-2cardnews-2.png",
-    "popup-cardnews2-1.png",
-    "popup-cardnews2-2.png",
-    "popup-cardnews2-3.png",
-    "popup-cardnews2-4.png",
-  ];
-
   // 카드뉴스 클릭 -> popup
   $(".cn").each((i, el) => {
     $(el).click(() => {
-      $(".popup ul li").each((j, liEl) => {
-        $(liEl).find("img").attr("src", `images/${i === 0 ? cardnews1ImagesSrc[j] : cardnews2ImagesSrc[j]}`)
-      });
+      $(".popup").removeClass("dp");
+      $(".popup ul").removeClass("active");
+      $(`.popup ul.popup-cn${i + 1}`).addClass("active");
+
+      $(".popup").show();
+
+      $("html").addClass("hidden");
+      $("body").addClass("hidden");
+    });
+  })
+
+  // 상세페이지 클릭 -> popup
+  $(".dp").each((i, el) => {
+    $(el).click((e) => {
+      e.preventDefault();
+      $(".popup").addClass("dp");
+      $(".popup ul").removeClass("active");
+      $(`.popup ul.popup-dp${i + 1}`).addClass("active");
 
       $(".popup").show();
 

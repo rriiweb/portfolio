@@ -661,25 +661,43 @@ section.hero {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.popup ul {
+.popup .popup-box {
   position: absolute;  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80vw;
   height: 80vh;
-  /* border-radius: 20px; */
   border: 2px solid #000;
   padding: 5rem;
   background-color: #FFFCF4;
-  overflow-y: scroll;
-  scrollbar-width: none;
   text-align: center;
 }
 
-.popup ul li img {
+.popup.dp .popup-box {
+  height: 90vh;
+}
+
+.popup .popup-box ul {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.popup .popup-box ul.active {
+  display: block;
+}
+
+.popup .popup-box ul li img {
   width: 40%;
+  vertical-align: middle;
   margin-bottom: 1rem;
+}
+
+.popup.dp .popup-box ul li img {
+  margin-bottom: 0;
 }
 
 .popup-scroll {
@@ -690,7 +708,6 @@ section.hero {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
   animation: popupScrollUpDown 1s infinite alternate;
 }
 
@@ -703,6 +720,19 @@ section.hero {
   }
 }
 
+.popup.dp .popup-scroll {
+  animation: popupDetailPageScrollUpDown 1s infinite alternate;
+}
+
+@keyframes popupDetailPageScrollUpDown {
+  0% {
+    bottom: calc(5vh + 10px);
+  }
+  100% {
+    bottom: calc(5vh + 20px);
+  }
+}
+
 .popup-scroll span {
   display: block;
   position: absolute;
@@ -710,8 +740,8 @@ section.hero {
   left: 50%;
   width: 10px;
   height: 10px;
-  border-left: 2px solid #FFFCF4;
-  border-bottom: 2px solid #FFFCF4;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
